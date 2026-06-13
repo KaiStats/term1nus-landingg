@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #1a1d29;
+  --charcoal: #252836;
+  --surface: #1e2133;
+  --divider: #2d3252;
+  --gold: #d4af37;
+  --gold-light: #e8c84a;
+  --gold-dim: #b8922a;
+  --sage: #6ba39e;
+  --sage-light: #8ecbc6;
+  --sage-dim: #4d8278;
+  --copy: #f2f2f4;
+  --dim: #8b90a8;
+  --faint: #4a5068;
+}
+
+@theme inline {
+  --color-background: var(--navy);
+  --color-foreground: var(--copy);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background-color: var(--navy);
+  color: var(--copy);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* ── Animations ── */
+@keyframes pulse-ring {
+  0%, 100% { opacity: 0.18; }
+  50% { opacity: 0.55; }
+}
+
+@keyframes pulse-ring-fast {
+  0%, 100% { opacity: 0.28; }
+  50% { opacity: 0.65; }
+}
+
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+  50% { transform: translateY(-14px) rotate(6deg); opacity: 0.72; }
+}
+
+@keyframes float-particle-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+  50% { transform: translateY(-20px) rotate(-4deg); opacity: 0.6; }
+}
+
+@keyframes shimmer-gold {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes count-bar {
+  from { width: 0; }
+}
+
+.animate-pulse-ring { animation: pulse-ring 4s ease-in-out infinite; }
+.animate-pulse-ring-fast { animation: pulse-ring-fast 2.8s ease-in-out infinite; }
+.animate-float { animation: float-particle 6s ease-in-out infinite; }
+.animate-float-slow { animation: float-particle-slow 9s ease-in-out infinite; }
+.animate-fade-up { animation: fade-up 0.7s ease-out forwards; }
+.animate-fade-up-1 { opacity: 0; animation: fade-up 0.7s ease-out 0.15s forwards; }
+.animate-fade-up-2 { opacity: 0; animation: fade-up 0.7s ease-out 0.3s forwards; }
+.animate-fade-up-3 { opacity: 0; animation: fade-up 0.7s ease-out 0.45s forwards; }
+
+/* ── Gold shimmer headline ── */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--gold-dim) 0%,
+    var(--gold) 25%,
+    #f7e08a 50%,
+    var(--gold) 75%,
+    var(--gold-dim) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-gold 5s linear infinite;
+}
+
+/* ── Surface cards ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 16px;
+}
+
+.card-hover {
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 16px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+.card-hover:hover {
+  border-color: rgba(107, 163, 158, 0.45);
+  box-shadow: 0 8px 36px rgba(107, 163, 158, 0.09);
+  transform: translateY(-3px);
+}
+
+.card-queen {
+  background: var(--surface);
+  border: 1px solid var(--gold);
+  border-radius: 16px;
+  box-shadow: 0 0 36px rgba(212, 175, 55, 0.13), inset 0 1px 0 rgba(212, 175, 55, 0.08);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.card-queen:hover {
+  box-shadow: 0 0 56px rgba(212, 175, 55, 0.22), inset 0 1px 0 rgba(212, 175, 55, 0.12);
+  transform: translateY(-4px);
+}
+
+/* ── Buttons ── */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  border-radius: 10px;
+  transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+.btn-gold:hover {
+  background: var(--gold-light);
+  box-shadow: 0 4px 28px rgba(212, 175, 55, 0.42);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dim);
+  border: 1px solid var(--divider);
+  border-radius: 10px;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+.btn-ghost:hover {
+  color: var(--copy);
+  border-color: var(--faint);
+}
+
+.btn-sage {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sage);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+.btn-sage:hover {
+  background: var(--sage-light);
+  box-shadow: 0 4px 22px rgba(107, 163, 158, 0.38);
+  transform: translateY(-1px);
+}
+
+/* ── Nav link ── */
+.nav-link {
+  color: var(--dim);
+  transition: color 0.2s ease;
+}
+.nav-link:hover { color: var(--copy); }
+
+/* ── Dividers ── */
+.section-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--divider) 20%, var(--divider) 80%, transparent 100%);
+}
+
+/* ── Badge pill ── */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 99px;
+  border: 1px solid var(--divider);
+  background: rgba(30, 33, 51, 0.85);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--dim);
+  backdrop-filter: blur(10px);
+}
+
+/* ── Security score ring ── */
+.score-ring-track {
+  stroke: var(--divider);
+  fill: none;
+}
+.score-ring-fill {
+  fill: none;
+  stroke: var(--sage);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Trust badge ── */
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 20px;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  text-align: center;
+  transition: border-color 0.2s ease;
+}
+.trust-badge:hover { border-color: rgba(107, 163, 158, 0.4); }
+
+/* ── Feature check ── */
+.feature-check::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Ccircle cx='8' cy='8' r='7.5' stroke='%236ba39e' stroke-opacity='0.5'/%3E%3Cpath d='M4.5 8l2.5 2.5 4-5' stroke='%236ba39e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
