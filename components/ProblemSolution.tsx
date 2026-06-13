@@ -78,7 +78,7 @@ export default function ProblemSolution() {
           <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "var(--gold)" }}>
             The Problem
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-5" style={{ color: "var(--copy)" }}>
+          <h2 className="font-display font-bold tracking-display leading-[1.02] mb-5" style={{ color: "var(--copy)", fontSize: "clamp(2rem, 5vw, 3.2rem)" }}>
             Freelancers lose 40% of their<br className="hidden sm:block" /> revenue to scope creep.
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--dim)" }}>
@@ -142,7 +142,7 @@ export default function ProblemSolution() {
           <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "var(--sage)" }}>
             The Solution
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-5" style={{ color: "var(--copy)" }}>
+          <h2 className="font-display font-bold tracking-display leading-[1.02] mb-5" style={{ color: "var(--copy)", fontSize: "clamp(2rem, 5vw, 3.2rem)" }}>
             Enforceable boundaries.<br className="hidden sm:block" /> Automated protection.
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--dim)" }}>

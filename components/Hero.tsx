@@ -38,7 +38,8 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-5xl sm:text-6xl lg:text-[76px] font-bold tracking-tight leading-[1.04] mb-6 animate-fade-up-1">
+        <h1 className="font-display tracking-display font-bold leading-[0.98] mb-6 animate-fade-up-1"
+          style={{ fontSize: "clamp(3.2rem, 8vw, 5.5rem)" }}>
           <span style={{ color: "var(--copy)" }}>Your Scope</span>
           <br />
           <span className="text-shimmer">Is Sacred.</span>
@@ -46,7 +47,7 @@ export default function Hero() {
 
         {/* Sub-headline */}
         <p
-          className="text-xl leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-up-2"
+          className="text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-up-2 tracking-subhead"
           style={{ color: "var(--dim)" }}
         >
           Term1nus enforces project boundaries so clients can&apos;t expand the

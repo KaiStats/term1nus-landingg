@@ -30,8 +30,8 @@ export default function CTA() {
         </div>
 
         <h2
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] mb-6"
-          style={{ color: "var(--copy)" }}
+          className="font-display font-bold tracking-display leading-[0.98] mb-6"
+          style={{ color: "var(--copy)", fontSize: "clamp(2.4rem, 6vw, 4.2rem)" }}
         >
           Scope creep doesn&apos;t negotiate.
           <br />

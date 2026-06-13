@@ -20,13 +20,27 @@
   --color-background: var(--navy);
   --color-foreground: var(--copy);
   --font-sans: var(--font-inter);
+  --font-display: var(--font-display);
 }
 
 body {
   background-color: var(--navy);
   color: var(--copy);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Display font — Space Grotesk for all headlines */
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-feature-settings: "ss01", "ss02";
+}
+
+/* Tight tracking presets */
+.tracking-display { letter-spacing: -0.04em; }
+.tracking-heading { letter-spacing: -0.03em; }
+.tracking-subhead { letter-spacing: -0.02em; }
 
 /* ── Animations ── */
 @keyframes pulse-ring {

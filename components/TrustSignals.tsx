@@ -89,8 +89,8 @@ export default function TrustSignals() {
             Security & Trust
           </p>
           <h2
-            className="text-4xl sm:text-5xl font-bold tracking-tight mb-5"
-            style={{ color: "var(--copy)" }}
+            className="font-display font-bold tracking-display leading-[1.02] mb-5"
+            style={{ color: "var(--copy)", fontSize: "clamp(2rem, 5vw, 3.2rem)" }}
           >
             Built for how money actually works.
           </h2>

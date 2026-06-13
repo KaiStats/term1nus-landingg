@@ -90,8 +90,8 @@ export default function Pricing() {
             Pricing
           </p>
           <h2
-            className="text-4xl sm:text-5xl font-bold tracking-tight mb-5"
-            style={{ color: "var(--copy)" }}
+            className="font-display font-bold tracking-display leading-[1.02] mb-5"
+            style={{ color: "var(--copy)", fontSize: "clamp(2rem, 5vw, 3.2rem)" }}
           >
             Choose your protection tier.
           </h2>
@@ -144,7 +144,7 @@ function TierCard({ tier }: { tier: Tier }) {
         >
           {tier.icon}
         </div>
-        <h3 className="text-xl font-bold mb-1" style={{ color: "var(--copy)" }}>
+        <h3 className="font-display text-xl font-bold tracking-subhead mb-1" style={{ color: "var(--copy)" }}>
           {tier.name}
         </h3>
         <p className="text-sm" style={{ color: "var(--dim)" }}>
@@ -156,7 +156,7 @@ function TierCard({ tier }: { tier: Tier }) {
       <div className="mb-8">
         <div className="flex items-end gap-2">
           <span
-            className="text-5xl font-bold tracking-tight"
+            className="font-display text-5xl font-bold tracking-display"
             style={{ color: tier.highlight ? "var(--gold)" : "var(--copy)" }}
           >
             {tier.price}
